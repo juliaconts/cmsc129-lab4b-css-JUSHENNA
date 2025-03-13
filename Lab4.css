@@ -230,7 +230,7 @@ a[href^="#title"]:active { color:beige; }
 
 /* ========== ABOUT ========== */
 
-.about{
+.about {
     .coffee {
         width: 100%;
         max-width: 1200px;
@@ -241,24 +241,28 @@ a[href^="#title"]:active { color:beige; }
     /* Logo */
     .coffee img#banner {
         width: 120px; 
+        display:block;
         height: auto;
         align-items: center;
-        float: left;
-        margin-right: 10px; 
+        margin-left: 60px; 
+        margin-top: -1px;
+        position: absolute;
     }
 
     /* Text next to the logo */
     .coffee:nth-of-type(2){
         background-color: white;
         border-radius: 10px;
+        
     }
     .coffee:nth-of-type(2) .definition {
-        font-size: 175%;
-        text-align: left;
-        line-height: 1.5;
+        font-weight: bold;
+        font-size: 220%;
+        position: relative;
         text-align: center;
+        padding-left: 15%;
+        margin-top: 10px;
         width: calc(100% - 180px); /* Adjust width to fit next to logo */
-        float: left;
     }
 
     /* Favorite Coffee Songs section */
@@ -268,6 +272,10 @@ a[href^="#title"]:active { color:beige; }
         font-size: 24px;
         font-weight: bold;
         margin-bottom: 15px;
+    }
+
+    .coffee:nth-of-type(3) {
+        background-color: antiquewhite;
     }
 
     .coffee ul {
@@ -280,37 +288,16 @@ a[href^="#title"]:active { color:beige; }
 
     /* Adjust video size */
     .coffeeVideo {
-        width: 383px;
-        height: 220px;
+        width: 100%;
+        height: 100%
     }
 
     /* Meet The Team section */
 
+
     .coffee:nth-of-type(4) {
-        background-color: white;
-        border-radius: 10px;
-    }
-
-    .coffee table {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-collapse: collapse;
-        gap: 5px;
-    }
-
-    tr{
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-
-    td{
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
+        background-color: #371f10;
+        
     }
 
     /* Team member images */
@@ -320,6 +307,10 @@ a[href^="#title"]:active { color:beige; }
         object-fit: cover;
         margin: 0px;
         padding: 0px;
+        flex-wrap: wrap;
+        gap: 5px;
+        border-width: 2px;
+        border-color: #bda694;
     }
 
     /* Styling for the labels under team members */
@@ -330,7 +321,6 @@ a[href^="#title"]:active { color:beige; }
         margin-top: 5px;
         padding: 2px 0;
         text-align: center;
-        display: block;
     }
 
     /*The picture with the text besides it */
@@ -339,8 +329,7 @@ a[href^="#title"]:active { color:beige; }
         grid-template-columns: 15% 85%; 
         gap: 20px; 
         align-items: center; 
-        background-color: white;
-        border-radius: 10px;
+        background-color: #371f10;
     }
 
     /*Image*/
@@ -355,13 +344,16 @@ a[href^="#title"]:active { color:beige; }
     .coffee:nth-of-type(6) p.definition:first-of-type{
         grid-row: 1;
         padding-right: 10px;
+        color: #ede0d4;
     }
     .coffee:nth-of-type(6) p.definition:last-of-type{
         grid-row: 2;
         padding-right: 10px;
+        color: #ede0d4;
     }
 
 }
+
 
 /* ========== FOOTER ========== */
 #bottomPage {
