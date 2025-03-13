@@ -14,8 +14,6 @@ body {
 
 /* ========== HEADER TO NAV BAR (applies to all) ========== */
 
-a { float: right; }
-
 header, #welcome, .navBar, footer {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
     url('Images/CoffeeBanner.jpg');
@@ -80,6 +78,15 @@ header {
 
 .navigation:hover { background-color: rgb(228, 187, 125); } /* Hover effect */
 
+
+a[href^="#bottomPage"]:link { color:#371f10; }
+a[href^="#bottomPage"]:hover { font-weight: bold; }
+a[href^="#bottomPage"]:active { color:beige; }
+
+a[href^="#title"]:link { color:#371f10; }
+a[href^="#title"]:hover { font-weight: bold; }
+a[href^="#title"]:active { color:beige; }
+
 /* ========== HOME ========== */
 .home {
     .coffee-container {
@@ -121,8 +128,6 @@ header {
 
 /* ========== ORDER ========== */
 .order {
-    clear: both;
-    
     .coffee:has(form) {
         float: left;
         width: 30%;
@@ -131,9 +136,10 @@ header {
         border-radius: 20px;
         padding: 10px;
         padding-bottom: 100px;
+        margin-left: 2%;
         box-shadow: -5px 5px 5px #371f10;
         background-color: #72503a;
-        color: antiquewhite;
+        color: beige;
 
         input[type=text], input[type=email] {
             width: 95%;
@@ -151,10 +157,15 @@ header {
             font-size: 40px;
         }
 
+        input[type=submit]:hover { 
+            background-color: rgb(228, 187, 125); 
+            font-weight: bold;
+        } 
+
         input:focus {background-color: white; }
 
         input, select {
-            background-color: antiquewhite;
+            background-color: beige;
             border-color: #bda694;
             width: 98%;
             padding: 5px;
@@ -185,7 +196,7 @@ header {
             width: 90%;
 
             tr td {
-                width: 100px;
+                width: 125px;
                 text-align: center;
             }
 
@@ -198,9 +209,11 @@ header {
         }
 
         .coffeeImg {
-            height: 100px;
-            width: 100px;
+            height: 125px;
+            width: 125px;
             object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .coffeeImg:hover {transform:scale(1.08);}
@@ -208,6 +221,10 @@ header {
 
     .coffee {
         padding-bottom: 5%;
+    }
+
+    div, footer {
+        clear: both;
     }
 }
 
