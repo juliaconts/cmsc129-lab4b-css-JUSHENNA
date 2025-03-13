@@ -89,40 +89,80 @@ a[href^="#title"]:active { color:beige; }
 
 /* ========== HOME ========== */
 .home {
-    .coffee-container {
-        display: flex;
-        flex-direction: column; /* Stack items vertically */
-        gap: 20px;              /* Adds spacing between sections */
-        padding: 20px;
-    }
-
-    .definition {
-        order: -1;              /* Moves the definition to the top */
-        background-color: rgba(255, 255, 255, 0.9); 
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        text-align: justify;
-    }
-
     .coffee ol, .coffee h2 {
+        float: left;
+        color: rgb(87, 30, 30);        
+        width: 50%;           
+        margin: 0 20px 20px 20px;
+        padding: 10px;             /* Increased padding for better readability */
         background-color: rgba(255, 255, 255, 0.9); 
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;   
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
         text-align: justify;
+        box-sizing: border-box;
     }
 
+    .coffee ol {
+        padding: 25px;
+        font-size: 15px;
+    }
+    
+    .coffee h2 {
+        text-align: center;
+        background-color: beige;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+    
     .coffee img {
-        width: 100%;
-        height: auto;
+        display: block;         /* Ensures the image behaves like a block element */
+        margin: 0 auto 10px auto; /* Centers the image and creates space below */
+        max-width: 30%;         /* Controls image size */
         border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    }
+    
+    /* Force the button to align below the image */
+    #orderCoffee {
+        position: relative;     
+        top: 0px;            
+        left: 24%;              
+        transform: translateX(-50%); /* Corrects centering */
+        padding: 20px;
+        width: 26%;
+        background-color: brown;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+        font-size: large;
+        text-transform: uppercase;
     }
 
-    .coffee p #definition {
-        position: absolute;
-        top: 200px;
+    #orderCoffee:hover{
+        background-color: rgba(193, 144, 71, 0.773);
+    }
+
+    .coffee p {
+        width: 50;
+        float: center;
+        text-align: center;
+        margin-top: 0;
+        padding-right: 10px;
+        font-size: medium;
+    }
+
+    #bottomPage {
+        text-align: center;
+        display: block;
+        padding-right: 20px;
+        padding-top: 20px;
+        font-size: small;
+    }
+    
+    .coffee #title{
+        margin-left: 20px;
     }
 }
 
