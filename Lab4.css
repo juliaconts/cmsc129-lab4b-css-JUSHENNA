@@ -212,10 +212,138 @@ header {
 }
 
 /* ========== ABOUT ========== */
-.about {
+
+.about{
     .coffee {
         width: 100%;
+        max-width: 1200px;
+        margin: 20px auto;
+        overflow: hidden; /* Prevents float issues */
     }
+
+    /* Logo */
+    .coffee img#banner {
+        width: 120px; 
+        height: auto;
+        align-items: center;
+        float: left;
+        margin-right: 10px; 
+    }
+
+    /* Text next to the logo */
+    .coffee:nth-of-type(2){
+        background-color: white;
+        border-radius: 10px;
+    }
+    .coffee:nth-of-type(2) .definition {
+        font-size: 175%;
+        text-align: left;
+        line-height: 1.5;
+        text-align: center;
+        width: calc(100% - 180px); /* Adjust width to fit next to logo */
+        float: left;
+    }
+
+    /* Favorite Coffee Songs section */
+    h2 {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .coffee ul {
+        display: flex;
+        justify-content: center; 
+        gap: 10px; 
+        padding: 0;
+        list-style-type: none;
+    }
+
+    /* Adjust video size */
+    .coffeeVideo {
+        width: 383px;
+        height: 220px;
+    }
+
+    /* Meet The Team section */
+
+    .coffee:nth-of-type(4) {
+        background-color: white;
+        border-radius: 10px;
+    }
+
+    .coffee table {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-collapse: collapse;
+        gap: 5px;
+    }
+
+    tr{
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    td{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    /* Team member images */
+    .coffee .teamMember {
+        width: 188px;
+        height: 188px;
+        object-fit: cover;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    /* Styling for the labels under team members */
+    .coffee .label {
+        font-size: 10px;
+        font-weight: bold;
+        font-family: "Georgia", serif;
+        margin-top: 5px;
+        padding: 2px 0;
+        text-align: center;
+        display: block;
+    }
+
+    /*The picture with the text besides it */
+    .coffee:nth-of-type(6) {
+        display: grid;
+        grid-template-columns: 15% 85%; 
+        gap: 20px; 
+        align-items: center; 
+        background-color: white;
+        border-radius: 10px;
+    }
+
+    /*Image*/
+    .coffee:nth-of-type(6) img {
+        grid-column: 1;
+        grid-row: 1/ span 2;
+        max-width: 100%;
+        height: 250px;
+    }
+
+    /*Texts*/
+    .coffee:nth-of-type(6) p.definition:first-of-type{
+        grid-row: 1;
+        padding-right: 10px;
+    }
+    .coffee:nth-of-type(6) p.definition:last-of-type{
+        grid-row: 2;
+        padding-right: 10px;
+    }
+
 }
 
 /* ========== FOOTER ========== */
