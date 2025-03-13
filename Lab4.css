@@ -89,8 +89,6 @@ a[href^="#title"]:active { color:beige; }
 
 /* ========== HOME ========== */
 .home {
-    }
-
     .coffee ol, .coffee h2 {
         float: left;
         color: rgb(87, 30, 30);        
@@ -98,22 +96,28 @@ a[href^="#title"]:active { color:beige; }
         margin: 0 20px 20px 20px;
         padding: 10px;             /* Increased padding for better readability */
         background-color: rgba(255, 255, 255, 0.9); 
-        padding: 20px;
-        border-radius: 8px;
         border-radius: 8px;   
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
         text-align: justify;
         box-sizing: border-box;
     }
 
+    .coffee ol {
+        padding: 25px;
+        font-size: 15px;
+    }
+    
+    .coffee h2 {
         text-align: center;
         background-color: beige;
         margin-bottom: 10px;
         text-transform: uppercase;
+    }
+    
     .coffee img {
-        width: 100%;
-        height: auto;
+        display: block;         /* Ensures the image behaves like a block element */
         margin: 0 auto 10px auto; /* Centers the image and creates space below */
+        max-width: 30%;         /* Controls image size */
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     }
@@ -265,9 +269,20 @@ a[href^="#title"]:active { color:beige; }
 }
 
 /* ========== ABOUT ========== */
-.about {
+
+.about{
     .coffee {
         width: 100%;
+        max-width: 1200px;
+        margin: 20px auto;
+        overflow: hidden; /* Prevents float issues */
+    }
+
+    /* Logo */
+    .coffee img#banner {
+        width: 120px; 
+        height: auto;
+        align-items: center;
         float: left;
         margin-right: 10px; 
     }
