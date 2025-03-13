@@ -4,6 +4,10 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body, .about, .order {
     background-image: url(Images/coffeeBg.png);
     background-size: cover;
@@ -77,50 +81,81 @@ header {
 }
 
 #banner {
-    display: none;    /* Removes unwanted space below the image */
+    display: none;  
 }
 
-.coffee-container {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    gap: 20px;              /* Adds spacing between sections */
-    padding: 20px;
-}
+.home {
+    .coffee ol, .coffee h2 {
+        float: left;
+        color: rgb(87, 30, 30);        
+        width: 50%;           
+        margin: 0 20px 20px 20px;
+        padding: 10px;             /* Increased padding for better readability */
+        background-color: rgba(255, 255, 255, 0.9); 
+        border-radius: 8px;   
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        text-align: justify;
+        box-sizing: border-box;
+    }
 
-.definition {
-    order: -1;              /* Moves the definition to the top */
-    background-color: rgba(255, 255, 255, 0.9); 
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: justify;
-}
+    .coffee ol {
+        padding: 25px;
+        font-size: 15px;
+    }
+    
+    .coffee h2 {
+        text-align: center;
+        background-color: beige;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+    
+    .coffee img {
+        display: block;         /* Ensures the image behaves like a block element */
+        margin: 0 auto 10px auto; /* Centers the image and creates space below */
+        max-width: 30%;         /* Controls image size */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    }
+    
+    /* Force the button to align below the image */
+    #orderCoffee {
+        position: relative;     /* Relative position ensures it follows the flow */
+        top: 0px;            /* Moves the button upward */
+        left: 24%;              /* Centers the button horizontally */
+        transform: translateX(-50%); /* Corrects centering */
+        padding: 20px;
+        width: 26%;
+        background-color: brown;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+        font-size: large;
+        text-transform: uppercase;
+    }
 
-.coffee ol, .coffee h2 {
-    background-color: rgba(255, 255, 255, 0.9); 
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: justify;
-}
+    .coffee p {
+        width: 50;
+        float: center;
+        text-align: center;
+        margin-top: 0;
+        padding-right: 10px;
+        font-size: medium;
+    }
 
-.coffee img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.coffee p #definition {
-    position: absolute;
-    top: 200px;
-
-
-}
-#bottomPage {
-    text-align: center;
-    display: block;
-    padding-right: 20px;
+    #bottomPage {
+        text-align: center;
+        display: block;
+        padding-right: 20px;
+        padding-top: 20px;
+        font-size: small;
+    }
+    
+    .coffee #title{
+        margin-left: 20px;
+    }
 }
 
 footer {
