@@ -14,14 +14,14 @@ body {
 
 /* ========== HEADER TO NAV BAR (applies to all) ========== */
 
-a { float: right; }
-
 header, #welcome, .navBar, footer {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
     url('Images/CoffeeBanner.jpg');
     background-size: cover;
     background-position: bottom;
     background-attachment: fixed;
+    overflow: hidden;
+    margin: 0;
 }
 
 #banner { display: none; } /* Removes unwanted space below the image */ 
@@ -37,11 +37,12 @@ header {
     flex-direction: column;
     text-align: center;
     padding: 10px 0;
+    height: 50%;
 }
 
 #title {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: xx-large;
 }
 
 #welcome {
@@ -62,7 +63,7 @@ header {
     padding: 10px 0;
     margin: 0;
     position: sticky; /* Sticky positioning for the nav bar */
-    top: 60px;  /* Positioned below the header */
+    top: 70px;  /* Positioned below the header */
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
     z-index: 999;
 }
@@ -80,50 +81,103 @@ header {
 
 .navigation:hover { background-color: rgb(228, 187, 125); } /* Hover effect */
 
+a[href^="#bottomPage"], a[href^="#title"] {
+    position: absolute;
+    padding-right: 2%;
+    text-align: right;
+    text-shadow: 2px 1px white;
+}
+
+a[href^="#bottomPage"]:link { color:#371f10; }
+a[href^="#bottomPage"]:hover { font-weight: bold; }
+a[href^="#bottomPage"]:active { color:beige; }
+
+a[href^="#title"]:link { color:#371f10; }
+a[href^="#title"]:hover { font-weight: bold; }
+a[href^="#title"]:active { color:beige; }
+
 /* ========== HOME ========== */
 .home {
-    .coffee-container {
-        display: flex;
-        flex-direction: column; /* Stack items vertically */
-        gap: 20px;              /* Adds spacing between sections */
-        padding: 20px;
-    }
-
-    .definition {
-        order: -1;              /* Moves the definition to the top */
-        background-color: rgba(255, 255, 255, 0.9); 
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        text-align: justify;
-    }
-
     .coffee ol, .coffee h2 {
+        float: left;
+        color: rgb(87, 30, 30);        
+        width: 50%;           
+        margin: 0 20px 20px 20px;
+        padding: 10px;             /* Increased padding for better readability */
         background-color: rgba(255, 255, 255, 0.9); 
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;   
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
         text-align: justify;
+        box-sizing: border-box;
     }
 
+    .coffee ol {
+        padding: 25px;
+        font-size: 15px;
+    }
+    
+    .coffee h2 {
+        text-align: center;
+        background-color: beige;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+    
     .coffee img {
-        width: 100%;
-        height: auto;
+        display: block;         /* Ensures the image behaves like a block element */
+        margin: 0 auto 10px auto; /* Centers the image and creates space below */
+        max-width: 30%;         /* Controls image size */
         border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    }
+    
+    /* Force the button to align below the image */
+    #orderCoffee {
+        position: relative;     
+        top: 0px;            
+        left: 24%;              
+        transform: translateX(-50%); /* Corrects centering */
+        padding: 20px;
+        width: 26%;
+        background-color: brown;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+        font-size: large;
+        text-transform: uppercase;
     }
 
-    .coffee p #definition {
-        position: absolute;
-        top: 200px;
+    #orderCoffee:hover{
+        background-color: rgba(193, 144, 71, 0.773);
+    }
+
+    .coffee p {
+        float: center;
+        text-align: center;
+        margin-top: 0;
+        padding-right: 10px;
+        font-size: medium;
+    }
+
+    #bottomPage {
+        text-align: center;
+        display: block;
+        padding-right: 20px;
+        padding-top: 20px;
+        font-size: small;
+    }
+    
+    .coffee #title{
+        margin-left: 20px;
     }
 }
 
 /* ========== ORDER ========== */
 .order {
-    clear: both;
-    
-    .coffee:has(form) {
+    /* Ordering Form at Left */
+    .coffee:has(form) {     
         float: left;
         width: 30%;
         height: max-content;
@@ -131,13 +185,16 @@ header {
         border-radius: 20px;
         padding: 10px;
         padding-bottom: 100px;
+        margin-top: 90px;
+        margin-left: 2%;
         box-shadow: -5px 5px 5px #371f10;
         background-color: #72503a;
-        color: antiquewhite;
+        color: beige;
 
-        input[type=text], input[type=email] {
-            width: 95%;
-        }
+        /* Text: First Name, Last Name
+           Email: E-mail
+           Select: Choose Drink
+           Submit: Order*/
 
         label:before, input[type=submit]:before {
             display: block;
@@ -151,10 +208,15 @@ header {
             font-size: 40px;
         }
 
+        input[type=submit]:hover { 
+            background-color: rgb(228, 187, 125); 
+            font-weight: bold;
+        } 
+
         input:focus {background-color: white; }
 
         input, select {
-            background-color: antiquewhite;
+            background-color: beige;
             border-color: #bda694;
             width: 98%;
             padding: 5px;
@@ -162,6 +224,7 @@ header {
         }
     }
 
+    /* Menu at Right */
     .coffee:has(table) {
         float: right;
         width: 64%;
@@ -170,6 +233,7 @@ header {
 
         #tagline {
             font-style: italic;
+            text-align: center;
         }
 
         h2 {
@@ -180,13 +244,17 @@ header {
         }
 
         table{
+            table-layout: fixed;
             margin-left: auto;
             margin-right: auto;
             width: 90%;
 
             tr td {
-                width: 100px;
+                width: 125px;
                 text-align: center;
+                overflow: hidden; 
+                text-overflow: ellipsis; 
+                word-wrap: break-word;
             }
 
             .coffeeTitle {
@@ -198,25 +266,154 @@ header {
         }
 
         .coffeeImg {
-            height: 100px;
-            width: 100px;
+            height: 125px;
+            width: 125px;
             object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .coffeeImg:hover {transform:scale(1.08);}
     }
 
-    .coffee {
-        padding-bottom: 5%;
-    }
+    .coffee { padding-bottom: 5%; }
+
+    div, footer { clear: both; }
 }
 
 /* ========== ABOUT ========== */
+
 .about {
     .coffee {
         width: 100%;
+        max-width: 1200px;
+        margin: 20px auto;
+        overflow: hidden; /* Prevents float issues */
+    }
+
+    /* Logo */
+    .coffee img#banner {
+        width: 10%; 
+        display:block;
+        height: auto;
+        align-items: center;
+        margin-left: 10%;
+        margin-top: -0.5%;
+        position: absolute;
+    }
+
+    /* Text next to the logo */
+    .coffee:nth-of-type(2){
+        background-color: white;
+        
+    }
+    .coffee:nth-of-type(2) .definition {
+        font-weight: bold;
+        font-size: 220%;
+        position: relative;
+        text-align: center;
+        padding-left: 18%;
+        padding-right: 12%;
+        margin-top: 10px;
+    }
+
+    /* Favorite Coffee Songs section */
+    h2 {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .coffee ul {
+        display: flex;
+        justify-content: center; 
+        gap: 10px; 
+        padding: 0;
+        list-style-type: none;
+    }
+
+    /* Adjust video size */
+    .coffeeVideo {
+        width: 100%;
+        height: 100%
+    }
+
+    .coffeeVideo:hover {transform:scale(1.15);}
+
+    /* Meet The Team section */
+
+
+    .coffee:nth-of-type(4) {
+        background-color: #997c67;
+        
+    }
+
+    /* Team member images */
+    .coffee .teamMember {
+        width: 188px;
+        height: 188px;
+        object-fit: cover;
+        margin: 0px;
+        padding: 0px;
+        flex-wrap: wrap;
+         border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    }
+
+    /* Styling for the labels under team members */
+    .coffee .label {
+        font-size: 11px;
+        font-weight: bold;
+        margin-top: 5px;
+        padding: 2px 0;
+        text-align: center;
+    }
+
+    .coffee:nth-of-type(5) p.definition {
+        text-align: center;
+    }
+    
+    /*The picture with the text besides it */
+    .coffee:nth-of-type(6) {
+        display: grid;
+        grid-template-columns: 15% 85%; 
+        gap: 20px; 
+        align-items: center; 
+        background-color: #371f10;
+    }
+
+    /*Image*/
+    .coffee:nth-of-type(6) img {
+        grid-column: 1;
+        grid-row: 1/ span 2;
+        max-width: 100%;
+        height: 120%;
+    }
+
+    /*Texts*/
+    .coffee:nth-of-type(6) p.definition:first-of-type{
+        grid-row: 1;
+        padding-right: 10px;
+        color: #ede0d4;
+    }
+    .coffee:nth-of-type(6) p.definition:last-of-type{
+        grid-row: 2;
+        padding-right: 10px;
+        color: #ede0d4;
+    }
+
+    .coffee:nth-of-type(7) p.definition {
+        text-align: center;
+    }
+
+    a[href^="#title"] {
+        text-align: left;
+        padding-left: 80%;
     }
 }
+
 
 /* ========== FOOTER ========== */
 #bottomPage {
@@ -228,7 +425,7 @@ header {
 footer {
     color: #f1f1f1;
     padding: 20px 0;
-    margin: 0;
+    margin-top: 2%;
     text-align: center;
 }
 
