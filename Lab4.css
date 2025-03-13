@@ -4,13 +4,17 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-body, .about, .order {
+body {
     background-image: url(Images/coffeeBg.png);
     background-size: cover;
     background-attachment: fixed;
-    padding: 0;
+    height: 100%;
     margin: 0;
 }
+
+/* ========== HEADER TO NAV BAR (applies to all) ========== */
+
+a { float: right; }
 
 header, #welcome, .navBar, footer {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
@@ -19,6 +23,8 @@ header, #welcome, .navBar, footer {
     background-position: bottom;
     background-attachment: fixed;
 }
+
+#banner { display: none; } /* Removes unwanted space below the image */ 
 
 header {
     position: sticky;
@@ -72,51 +78,147 @@ header {
     transition: background 0.3s;
 }
 
-.navigation:hover {
-    background-color: rgb(228, 187, 125); /* Hover effect */
+.navigation:hover { background-color: rgb(228, 187, 125); } /* Hover effect */
+
+/* ========== HOME ========== */
+.home {
+    .coffee-container {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        gap: 20px;              /* Adds spacing between sections */
+        padding: 20px;
+    }
+
+    .definition {
+        order: -1;              /* Moves the definition to the top */
+        background-color: rgba(255, 255, 255, 0.9); 
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: justify;
+    }
+
+    .coffee ol, .coffee h2 {
+        background-color: rgba(255, 255, 255, 0.9); 
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: justify;
+    }
+
+    .coffee img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .coffee p #definition {
+        position: absolute;
+        top: 200px;
+    }
 }
 
-#banner {
-    display: none;    /* Removes unwanted space below the image */
+/* ========== ORDER ========== */
+.order {
+    clear: both;
+    
+    .coffee:has(form) {
+        float: left;
+        width: 30%;
+        height: max-content;
+        position: absolute;
+        border-radius: 20px;
+        padding: 10px;
+        padding-bottom: 100px;
+        box-shadow: -5px 5px 5px #371f10;
+        background-color: #72503a;
+        color: antiquewhite;
+
+        input[type=text], input[type=email] {
+            width: 95%;
+        }
+
+        label:before, input[type=submit]:before {
+            display: block;
+            content: "";
+            margin-top: 10px;
+            padding-top: 10px;
+        }
+
+        input[type=submit] {
+            margin-top: 10%;
+            font-size: 40px;
+        }
+
+        input:focus {background-color: white; }
+
+        input, select {
+            background-color: antiquewhite;
+            border-color: #bda694;
+            width: 98%;
+            padding: 5px;
+            resize: vertical;
+        }
+    }
+
+    .coffee:has(table) {
+        float: right;
+        width: 64%;
+        position: relative;
+        table-layout: fixed;
+
+        #tagline {
+            font-style: italic;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 45px;
+            margin: 0px;
+            color: #72503a;
+        }
+
+        table{
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+
+            tr td {
+                width: 100px;
+                text-align: center;
+            }
+
+            .coffeeTitle {
+                padding: 10px;
+                font-size: 20px;
+                font-weight: bold;
+                background-color: antiquewhite;
+            }
+        }
+
+        .coffeeImg {
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+        }
+
+        .coffeeImg:hover {transform:scale(1.08);}
+    }
+
+    .coffee {
+        padding-bottom: 5%;
+    }
 }
 
-.coffee-container {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    gap: 20px;              /* Adds spacing between sections */
-    padding: 20px;
+/* ========== ABOUT ========== */
+.about {
+    .coffee {
+        width: 100%;
+    }
 }
 
-.definition {
-    order: -1;              /* Moves the definition to the top */
-    background-color: rgba(255, 255, 255, 0.9); 
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: justify;
-}
-
-.coffee ol, .coffee h2 {
-    background-color: rgba(255, 255, 255, 0.9); 
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: justify;
-}
-
-.coffee img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.coffee p #definition {
-    position: absolute;
-    top: 200px;
-
-
-}
+/* ========== FOOTER ========== */
 #bottomPage {
     text-align: center;
     display: block;
@@ -133,6 +235,9 @@ footer {
 footer p {
     margin: 5px 0;
 }
+
+
+
 
 /* 
 LABORATORY EXERCISE #4
