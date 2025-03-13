@@ -20,6 +20,8 @@ header, #welcome, .navBar, footer {
     background-size: cover;
     background-position: bottom;
     background-attachment: fixed;
+    overflow: hidden;
+    margin: 0;
 }
 
 #banner { display: none; } /* Removes unwanted space below the image */ 
@@ -152,7 +154,6 @@ a[href^="#title"]:active { color:beige; }
     }
 
     .coffee p {
-        width: 50;
         float: center;
         text-align: center;
         margin-top: 0;
@@ -296,7 +297,7 @@ a[href^="#title"]:active { color:beige; }
         display:block;
         height: auto;
         align-items: center;
-        margin-left: 11%;
+        margin-left: 10%;
         margin-top: -0.5%;
         position: absolute;
     }
